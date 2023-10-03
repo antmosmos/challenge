@@ -1,0 +1,25 @@
+def calculate_fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    :param n: The index of the Fibonacci number to calculate.
+    :type n: int
+    :return: The nth Fibonacci number.
+    :rtype: int
+    """
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        fib_sequence = [0, 1]
+        for i in range(2, n + 1):
+            next_fib = fib_sequence[-1] + fib_sequence[-2]
+            fib_sequence.append(next_fib)
+        return fib_sequence[-1]
+
+# Example usage:
+n = 10
+result = calculate_fibonacci(n)
+print(f"The {n}th Fibonacci number is: {result}")
+
